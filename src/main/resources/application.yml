@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ecommerce-backend
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecommercedb
+    username: root
+    password: ${DB_PASSWORD:your_password_here}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+

@@ -1,0 +1,394 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-08-01T05:06:07.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_001",
+      "parentId": "fld_auth",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/users/register",
+      "name": "Register User",
+      "description": "Register a new user account",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\",\n  \"phone\": \"+1234567890\",\n  \"address\": \"123 Main Street\",\n  \"city\": \"New York\",\n  \"state\": \"NY\",\n  \"zipCode\": \"10001\",\n  \"country\": \"USA\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1690876767000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_002",
+      "parentId": "fld_auth",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/users/login",
+      "name": "Login User",
+      "description": "Login and get JWT token",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1690876766000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_003",
+      "parentId": "fld_user",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/users/1",
+      "name": "Get User Profile",
+      "description": "Get user profile by ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1690876765000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_004",
+      "parentId": "fld_category",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/categories",
+      "name": "Get All Categories",
+      "description": "Retrieve all product categories",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1690876764000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_005",
+      "parentId": "fld_category",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/categories",
+      "name": "Create Category",
+      "description": "Create a new product category",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Gaming\",\n  \"description\": \"Gaming equipment and accessories\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1690876763000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_006",
+      "parentId": "fld_product",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/products",
+      "name": "Get All Products",
+      "description": "Retrieve all active products",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1690876762000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_007",
+      "parentId": "fld_product",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/products/search",
+      "name": "Search Products",
+      "description": "Search products by keyword",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "keyword",
+          "value": "laptop"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1690876761000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_008",
+      "parentId": "fld_product",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/products",
+      "name": "Create Product",
+      "description": "Create a new product",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Gaming Mouse\",\n  \"description\": \"High-precision gaming mouse with RGB lighting\",\n  \"price\": 79.99,\n  \"stockQuantity\": 50,\n  \"sku\": \"MOUSE-GAMING-001\",\n  \"imageUrl\": \"https://example.com/gaming-mouse.jpg\",\n  \"isActive\": true,\n  \"categoryId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1690876760000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_009",
+      "parentId": "fld_cart",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/cart/1",
+      "name": "Get Cart",
+      "description": "Get user's shopping cart",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1690876759000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_010",
+      "parentId": "fld_cart",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/cart/1/items",
+      "name": "Add to Cart",
+      "description": "Add product to cart",
+      "method": "POST",
+      "body": {},
+      "parameters": [
+        {
+          "name": "productId",
+          "value": "1"
+        },
+        {
+          "name": "quantity",
+          "value": "2"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1690876758000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_011",
+      "parentId": "fld_cart",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/cart/1/items/1",
+      "name": "Update Cart Item",
+      "description": "Update quantity of item in cart",
+      "method": "PUT",
+      "body": {},
+      "parameters": [
+        {
+          "name": "quantity",
+          "value": "3"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1690876757000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_012",
+      "parentId": "fld_order",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/orders/1",
+      "name": "Create Order",
+      "description": "Create order from cart items",
+      "method": "POST",
+      "body": {},
+      "parameters": [
+        {
+          "name": "shippingAddress",
+          "value": "123 Main Street, New York, NY 10001"
+        },
+        {
+          "name": "billingAddress",
+          "value": "123 Main Street, New York, NY 10001"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1690876756000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_013",
+      "parentId": "fld_order",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "url": "{{ _.baseUrl }}/api/orders/user/1",
+      "name": "Get User Orders",
+      "description": "Get all orders for a user",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1690876755000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_auth",
+      "parentId": "wrk_main",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "name": "🔐 Authentication",
+      "description": "User registration and login",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1690876767000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_user",
+      "parentId": "wrk_main",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "name": "👤 User Management",
+      "description": "User profile operations",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1690876766000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_category",
+      "parentId": "wrk_main",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "name": "🏷️ Categories",
+      "description": "Product category management",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1690876765000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_product",
+      "parentId": "wrk_main",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "name": "📦 Products",
+      "description": "Product catalog management",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1690876764000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_cart",
+      "parentId": "wrk_main",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "name": "🛒 Shopping Cart",
+      "description": "Cart operations",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1690876763000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_order",
+      "parentId": "wrk_main",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "name": "📋 Orders",
+      "description": "Order management",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1690876762000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_main",
+      "parentId": null,
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "name": "E-commerce Backend API",
+      "description": "Complete e-commerce backend API testing collection",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_main",
+      "parentId": "wrk_main",
+      "modified": 1690876767000,
+      "created": 1690876767000,
+      "name": "Base Environment",
+      "data": {
+        "baseUrl": "http://localhost:8080",
+        "token": ""
+      },
+      "dataPropertyOrder": {
+        "&": ["baseUrl", "token"]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1690876767000,
+      "_type": "environment"
+    }
+  ]
+}
